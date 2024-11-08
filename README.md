@@ -1,11 +1,7 @@
-# Programación-Básica
-## Proyecto: Gestión de Inventarios
+# Proyecto: Gestión de Inventarios
 
-Este es un repositorio para realizar las tareas grupales del curso de Programación Básica de la universidad Fidelitas.
-
----
-
-## Fase 1 del Proyecto
+## Fase 1 del Proyecto: 
+Analisis, algoritmo y diagrama de flujo.
 
 ### Análisis del Proyecto
 
