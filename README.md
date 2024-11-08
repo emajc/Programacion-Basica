@@ -1,6 +1,6 @@
 # Proyecto: Gestión de Inventarios
 
-## Fase 1 del Proyecto: 
+## Fase 1 del Proyecto
 Analisis, algoritmo y diagrama de flujo.
 
 ### Análisis del Proyecto
