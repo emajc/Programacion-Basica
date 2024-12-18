@@ -1,4 +1,5 @@
-#Esta es la primera prueba del proyecto de gestion de inventarios
+#Emanuel Jimenez Cubero
+#Curso de programación Basica SC-115
 
 # Programa de Gestión de Inventarios
 
@@ -15,25 +16,24 @@ def mostrar_menu():
 
 # Función para registrar un producto
 def registrar_producto():
-    nombre = input("Ingrese el nombre del producto: ")
+    nombre = input("\nIngrese el nombre del producto: ")
     codigo = input("Ingrese el código del producto: ")
+    # Verificar si el producto ya existe
+    for producto in productos:
+        if producto[1] == codigo:
+            print("\nError: El producto ya está registrado.")
+            return
     precio = float(input("Ingrese el precio del producto: "))
     cantidad = int(input("Ingrese la cantidad disponible: "))
     umbral_minimo = int(input("Ingrese el umbral mínimo: "))
 
-    # Verificar si el producto ya existe
-    for producto in productos:
-        if producto[1] == codigo:
-            print("Error: El producto ya está registrado.")
-            return
-
     # Registrar el nuevo producto
     productos.append([nombre, codigo, precio, cantidad, umbral_minimo])
-    print("Producto registrado exitosamente.")
+    print("\nProducto registrado exitosamente.")
 
 # Función para actualizar la cantidad de un producto
 def actualizar_cantidad():
-    codigo = input("Ingrese el código del producto: ")
+    codigo = input("\nIngrese el código del producto: ")
     cantidad_modificacion = int(input("Ingrese la cantidad (positiva para compra, negativa para venta): "))
 
     # Buscar el producto por el código
@@ -41,13 +41,13 @@ def actualizar_cantidad():
         if producto[1] == codigo:
             nueva_cantidad = producto[3] + cantidad_modificacion
             if nueva_cantidad < 0:
-                print("Error: La cantidad no puede ser negativa.")
+                print("\nError: No pueden salir más producto del que hay disponible.")
                 return
             producto[3] = nueva_cantidad
-            print(f"Cantidad actualizada. Nueva cantidad: {producto[3]}")
+            print(f"\nCantidad actualizada. Nueva cantidad: {producto[3]}")
             return
 
-    print("Error: Producto no encontrado.")
+    print("\nError: Producto no encontrado.")
 
 # Función para generar reporte de productos con bajo stock
 def generar_reporte_bajo_stock():
